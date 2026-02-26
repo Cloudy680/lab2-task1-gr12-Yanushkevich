@@ -1,2 +1,2 @@
 language = "c"
-run = "gcc -o hello /home/runner/project2/src/hello.c"
+run = "gcc -o labrabota2-1 src/main.c src/string_utils.c && ./labrabota2-1 \"Hello world\" \"AbCdEf\" \"Sheck string\""
