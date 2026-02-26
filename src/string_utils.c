@@ -8,8 +8,25 @@
  */
 
 #include "string_utils.h"
-#include <ctype.h>
 #include <string.h>
+
+/* Проверяет, является ли символ буквой (латиница или кириллица) */
+static int is_letter(char c)
+{
+    unsigned char uc = (unsigned char)c;
+
+    /* Латиница */
+    if ((uc >= 'A' && uc <= 'Z') || (uc >= 'a' && uc <= 'z')) {
+        return 1;
+    }
+
+    /* Кириллица (для кодировки CP1251/KOI8-R) */
+    if (uc >= 192 && uc <= 255) {
+        return 1;
+    }
+
+    return 0;
+}
 
 /* Удаляет буквы на чётных позициях в строке.
  * Используется два указателя: read_idx для чтения, write_idx для записи.
@@ -31,7 +48,7 @@ int process_string(char *str)
         char current_char = str[read_idx];
 
         /* Проверка: буква на чётной позиции */
-        if (isalpha((unsigned char)current_char) && (position % 2 == 0)) {
+        if (is_letter(current_char) && (position % 2 == 0)) {
             removed++;  /* буква удаляется */
         } else {
             /* символ остаётся, сдвигаем если нужно */
