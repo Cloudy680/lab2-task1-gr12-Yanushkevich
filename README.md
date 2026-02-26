@@ -1,11 +1,11 @@
 # Overview
 
-It is public template of assignment `"labrabota 3"` for FPMI students
+Это публичный репозиторий для задания 1 лабораторной работы номер 2
 
 # Usage
 
-Please, edit README and add some details, as instance **{add your last name, first name and group number}**.
+Янушкевич Максим 12 группа
 
 # Building
 
-Please, import repository and use for repl.it project, which is defined in the assignment "labrabota 3".
+https://github.com/Cloudy680/lab2-task1-gr12-Yanushkevich
